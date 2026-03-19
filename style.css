@@ -711,3 +711,24 @@ body {
 .site-header {
   background: #060607 !important;
 }
+
+html {
+  background: #060607 !important;
+}
+
+body {
+  background: #060607 !important;
+}
+
+/* iPhone fix */
+@supports (-webkit-touch-callout: none) {
+  html,
+  body {
+    background: #060607 !important;
+  }
+
+  body::before {
+    background:
+      linear-gradient(160deg, #060607, #100708 46%, #160809) !important;
+  }
+}

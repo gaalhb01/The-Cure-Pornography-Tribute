@@ -1,4 +1,3 @@
-
 function openModalFromImage(img) {
   const modal = document.getElementById('modal');
   const modalImg = document.getElementById('modal-img');
@@ -19,10 +18,22 @@ window.closeModal = closeModal;
 document.addEventListener('DOMContentLoaded', () => {
   const navToggle = document.querySelector('.nav-toggle');
   const nav = document.querySelector('.site-nav');
+
   if (navToggle && nav) {
-    navToggle.addEventListener('click', () => nav.classList.toggle('open'));
+    navToggle.addEventListener('click', () => {
+      nav.classList.toggle('open');
+      navToggle.classList.toggle('active');
+
+      const isOpen = nav.classList.contains('open');
+      navToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    });
+
     nav.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => nav.classList.remove('open'));
+      link.addEventListener('click', () => {
+        nav.classList.remove('open');
+        navToggle.classList.remove('active');
+        navToggle.setAttribute('aria-expanded', 'false');
+      });
     });
   }
 
@@ -46,6 +57,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   }, { threshold: 0.12 }) : null;
+
   reveals.forEach(el => io ? io.observe(el) : el.classList.add('show'));
 
   const openBtn = document.getElementById('openPlayer');
@@ -72,12 +84,14 @@ document.addEventListener('DOMContentLoaded', () => {
       if (playPause) playPause.textContent = '❚❚';
     });
   }
+
   if (closeBtn && player && audio) {
     closeBtn.addEventListener('click', () => {
       player.classList.remove('active');
       audio.pause();
     });
   }
+
   if (playPause && audio) {
     playPause.addEventListener('click', () => {
       if (audio.paused) {
@@ -89,23 +103,28 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   }
+
   if (audio && progressBar && currentTimeEl && durationEl) {
     audio.addEventListener('loadedmetadata', () => {
       progressBar.max = Math.floor(audio.duration || 0);
       durationEl.textContent = formatTime(audio.duration);
     });
+
     audio.addEventListener('timeupdate', () => {
       progressBar.value = Math.floor(audio.currentTime || 0);
       currentTimeEl.textContent = formatTime(audio.currentTime);
       if (playPause) playPause.textContent = audio.paused ? '▶' : '❚❚';
     });
+
     progressBar.addEventListener('input', () => {
       audio.currentTime = Number(progressBar.value);
     });
   }
+
   if (volumeBar && audio) {
     volumeBar.addEventListener('input', () => {
       audio.volume = Number(volumeBar.value);
     });
   }
 });
+
