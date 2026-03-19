@@ -633,3 +633,19 @@ input[type="range"] {
     max-width: 100%;
   }
 }
+
+
+.reveal {
+  opacity: 1 !important;
+  transform: none !important;
+  transition: none !important;
+}
+
+.reveal.show {
+  opacity: 1 !important;
+  transform: none !important;
+}
+.btn {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
+  font-size: 15px;
+}
