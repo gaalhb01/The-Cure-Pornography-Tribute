@@ -36,8 +36,6 @@ body {
     radial-gradient(circle at bottom right, rgba(183,15,18,0.16), transparent 28%),
     linear-gradient(160deg, var(--bg), var(--bg-soft) 46%, var(--bg-2));
   min-height: 100vh;
-  padding-top: env(safe-area-inset-top);
-  padding-bottom: env(safe-area-inset-bottom);
 }
 body::before {
   content: '';
@@ -653,42 +651,52 @@ input[type="range"] {
 }
 
 html {
+  margin: 0;
+  padding: 0;
   background: #060607 !important;
-  min-height: 100% !important;
+  min-height: 100%;
 }
 
 body {
-  margin: 0 !important;
-  min-height: 100vh !important;
-  min-height: 100dvh !important;
-  background-color: #060607 !important;
+  margin: 0;
+  padding: 0;
+  background: #060607 !important;
+  min-height: 100vh;
+  min-height: 100dvh;
 }
 
-body::before {
-  content: '' !important;
-  position: fixed !important;
-  inset: 0 !important;
-  z-index: -1 !important;
-  pointer-events: none !important;
+.site-header {
+  padding-top: env(safe-area-inset-top);
+  background: rgba(8,8,9,0.96) !important;
+}
+
+
+.footer,
+.page-shell,
+body {
+  padding-bottom: 0 !important;
+}
+
+
+.page-shell {
   background:
     radial-gradient(circle at top left, rgba(183,15,18,0.18), transparent 24%),
     radial-gradient(circle at 90% 20%, rgba(215,65,69,0.12), transparent 22%),
     radial-gradient(circle at bottom right, rgba(183,15,18,0.16), transparent 28%),
     linear-gradient(160deg, #060607, #100708 46%, #160809) !important;
+  min-height: 100dvh;
 }
 
-.site-header {
-  padding-top: env(safe-area-inset-top) !important;
+
+.music-player {
+  position: fixed;
+  left: 50%;
+  bottom: 22px !important;
+  transform: translate(-50%, 140%);
+  width: min(900px, calc(100% - 24px));
+  z-index: 1200;
 }
 
-.footer,
-.page-shell,
-body {
-  padding-bottom: env(safe-area-inset-bottom) !important;
-}
-@supports (-webkit-touch-callout: none) {
-  html,
-  body {
-    background: #060607 !important;
-  }
+.music-player.active {
+  transform: translate(-50%, 0);
 }
