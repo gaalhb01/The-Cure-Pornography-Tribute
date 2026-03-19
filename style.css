@@ -36,6 +36,8 @@ body {
     radial-gradient(circle at bottom right, rgba(183,15,18,0.16), transparent 28%),
     linear-gradient(160deg, var(--bg), var(--bg-soft) 46%, var(--bg-2));
   min-height: 100vh;
+  padding-top: env(safe-area-inset-top);
+  padding-bottom: env(safe-area-inset-bottom);
 }
 body::before {
   content: '';
