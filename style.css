@@ -701,34 +701,38 @@ body {
   transform: translate(-50%, 0);
 }
 
-html,
-body {
-  margin: 0;
-  padding: 0;
-  background: #060607 !important;
-}
-
-.site-header {
-  background: #060607 !important;
-}
-
-html {
-  background: #060607 !important;
-}
-
-body {
-  background: #060607 !important;
-}
-
-/* iPhone fix */
-@supports (-webkit-touch-callout: none) {
+@media screen and (max-width: 430px) {
   html,
   body {
     background: #060607 !important;
   }
 
+  .page-shell {
+    background: #060607 !important;
+  }
+
+  .site-header {
+    background: #060607 !important;
+  }
+
   body::before {
-    background:
-      linear-gradient(160deg, #060607, #100708 46%, #160809) !important;
+    background: #060607 !important;
   }
 }
+
+html,
+  body {
+    background: #060607 !important;
+  }
+
+  .page-shell {
+    background: #060607 !important;
+  }
+
+  .site-header {
+    background: #060607 !important;
+  }
+
+  body::before {
+    background: #060607 !important;
+  }
