@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="hu">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="author" content="Gaal Hunor">
+  <meta name="keywords" content="The Cure Pornography Tribute, Pornography Tribute">
+  <meta name="description" content="Ez a The Cure Pornography Tribute hivatalos oldala">
+  <title>The Cure Pornography Tribute</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="JavaScript/app.js" defer></script>
+</head>
+<body>
+  <div class="page-shell">
+    <header class="site-header">
+      <div class="inner">
+        <a class="brand" href="./index.html">
+          <span class="eyebrow">Hungarian Tribute</span>
+          <span class="title">The Cure Pornography Tribute</span>
+        </a>
+        <button class="nav-toggle" aria-label="Menü megnyitása">☰</button>
+        <nav class="site-nav">
+          <a class="active" href="./index.html">Kezdőlap</a>
+          <a href="./index3.html">Rólunk</a>
+          <a href="./index4.html">Események</a>
+          <a href="./index2.html">Galéria</a>
+          <a href="./index5.html">Tagok</a>
+          <a class="cta-link" href="./index2.html">Fotók</a>
+        </nav>
+      </div>
+    </header>
+
+    <section class="hero">
+      <div class="hero-grid">
+        <div class="reveal">
+          <div class="badge">Sötét hangulat · élő koncertek · The Cure életérzés</div>
+          <h1>Pornography</h1>
+          <p>Cure-t kedvelő csapat...Cure-t játszik....</p>
+          <div class="hero-actions">
+            <button class="btn btn-primary" id="openPlayer">Hallgasd meg</button>
+            <a class="btn btn-secondary" href="./index2.html">Nézd a fotókat</a>
+            <a class="btn btn-secondary" href="./index3.html">Olvasd el a történetet</a>
+          </div>
+          <div class="stats">
+            <div class="stat"><strong>2001</strong><span>az első évek kezdete</span></div>
+            <div class="stat"><strong>17+ év</strong><span>klubok és fesztiválok</span></div>
+            <div class="stat"><strong>Dark / New Wave</strong><span>hangulat és tiszteletadás</span></div>
+          </div>
+        </div>
+
+        <div class="hero-card reveal">
+          <img src="./Images/arpi.jpg" alt="Kisduda Árpád" loading="lazy">
+          <div class="meta">
+            <h3>Kisduda Árpád</h3>
+            <p>A csapat alapító embere, a zenekar arca és motorja.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head center reveal">
+        <span class="eyebrow">A zenekar világa</span>
+        <h2>Miért különleges ez a tribute?</h2>
+        <p>A cél ugyanaz maradt: a The Cure zenei és színpadi hangulatának méltó, erős és emlékezetes megszólaltatása a saját világotokra jellemző sötét-vörös vizuállal.</p>
+      </div>
+      <div class="grid-3">
+        <article class="card reveal">
+          <div class="icon-chip">♬</div>
+          <h3>Hangulatközpontú megszólalás</h3>
+          <p>Nem csak dalok szólalnak meg, hanem egy egész korszak atmoszférája, a dark, new wave és post punk világával együtt.</p>
+        </article>
+        <article class="card reveal">
+          <div class="icon-chip">✦</div>
+          <h3>Színpadi látvány</h3>
+          <p>A külsőségek, a smink, a haj és az összkép is része a koncertélménynek, ezért a vizuális világ ugyanúgy fontos, mint maga a zene.</p>
+        </article>
+        <article class="card reveal">
+          <div class="icon-chip">▣</div>
+          <h3>Aktív koncertzenekar</h3>
+          <p>Klubok, fesztiválok és visszatérő fellépések adják azt a folyamatos jelenlétet, amitől a csapat élő és hiteles marad.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="about-teaser">
+        <article class="quote-card reveal">
+          <div class="quote-mark">“</div>
+          <blockquote>A Pornography (Hungarian The Cure Tribute) zenekar 2001-ben alakult Gyöngyösön azzal a céllal, hogy a közönség és a tagok örömére elhozza a The Cure zenekar hangulatvilágát.</blockquote>
+          <p>Az indie, dark, new wave és post punk zenei irányzatok ősatyja előtti tisztelgésük nem csak a Cure, hanem ezen stílusok rajongóinak is kedvére tesz.</p>
+        </article>
+        <article class="panel reveal">
+          <h3>Rólunk röviden</h3>
+          <p>A Pornography az elmúlt évek alatt számtalan klubban és fesztiválon megfordult, és most is aktív szereplője ennek a talán nem is annyira underground szcénának.</p>
+          <p>Mint a legtöbb zenekarban, tagcserék itt is voltak, de a lelkesedés és a Cure-életérzés átadása végig megmaradt.</p>
+          <div class="button-row">
+            <a class="btn btn-primary" href="./index3.html">Tovább a teljes történetre</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    
+  </div>
+
+  <div id="musicPlayer" class="music-player">
+    <div class="audio-card">
+      <div>
+        <div class="track-title">Play for today</div>
+        <div class="track-sub">The Cure Pornography Tribute</div>
+        <div class="progress-row">
+          <span id="currentTime">0:00</span>
+          <input type="range" id="progressBar" value="0">
+          <span id="duration">3:39</span>
+        </div>
+      </div>
+      <div class="audio-controls">
+        <button id="playPause" class="icon-btn">▶</button>
+        <div class="volume">
+          <span>🔈</span>
+          <input type="range" id="volumeBar" min="0" max="1" step="0.01" value="0.7">
+        </div>
+        <button class="icon-btn close-player">✕</button>
+      </div>
+      <audio id="audio" src="./Music/Play for tuday tribute maraton.mp3"></audio>
+    </div>
+  </div>
+
+  <div id="modal" class="modal">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <img class="modal-content" id="modal-img" alt="Nagyított kép">
+  </div>
+
+  <footer class="footer">
+    <div class="footer-card">
+      <div><strong>© Pornography — tribute</strong></div>
+      <div>Kapcsolat: hellobello@curetribute.hu</div>
+    </div>
+  </footer>
+</body>
+</html>

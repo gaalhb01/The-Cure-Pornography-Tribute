@@ -1,0 +1,53 @@
+p {
+    font-weight: 500;
+  }
+  
+  .member-photo {
+    width: 25rem;
+    height: 25rem;
+    object-fit: cover;
+    border-radius: 1.25rem;
+    display: block;
+    margin: 0 auto;
+    image-rendering: auto;
+  }
+  
+  @media (max-width: 600px) and (orientation: portrait) {
+    body {
+      margin: 0.625rem;
+    }
+  
+    .member-photo {
+      margin: 1.25rem auto;
+      width: 18.75rem;
+      height: 18.75rem;
+      object-fit: cover;
+      border-radius: 1.25rem;
+      display: block;
+      margin: 0 auto;
+    }
+  
+    p {
+      margin: 0.375rem 0;
+    }
+  }
+  img {
+    width: 100%;
+    height: auto;              
+    image-rendering: auto;     
+    backface-visibility: hidden;
+    transform: translateZ(0);  
+  }
+  @media (max-width: 900px) and (orientation: landscape) {
+    body {
+      margin: 1.25rem 2.5rem;
+    }
+  
+    .member-photo {
+      margin: 1rem auto;
+    }
+  
+    p {
+      margin: 0.5rem 0;
+    }
+  }
