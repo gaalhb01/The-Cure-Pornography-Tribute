@@ -126,5 +126,61 @@ document.addEventListener('DOMContentLoaded', () => {
       audio.volume = Number(volumeBar.value);
     });
   }
+
+  const siteHeader = document.querySelector('.site-header');
+  const scrollBar = document.querySelector('.scroll-bar');
+  const scrollBarFill = document.querySelector('.scroll-bar-fill');
+
+  function updateScrollBarPosition() {
+    if (!siteHeader || !scrollBar) return;
+    const headerHeight = siteHeader.offsetHeight;
+    scrollBar.style.top = headerHeight + 'px';
+  }
+
+  function updateScrollProgress() {
+    if (!scrollBarFill) return;
+
+    const scrollTop = window.scrollY || window.pageYOffset;
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const scrollPercent = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+
+    scrollBarFill.style.width = scrollPercent + '%';
+  }
+
+  function updateScrollBarAll() {
+    updateScrollBarPosition();
+    updateScrollProgress();
+  }
+
+  updateScrollBarAll();
+  window.addEventListener('scroll', updateScrollProgress);
+  window.addEventListener('resize', updateScrollBarAll);
 });
 
+const targetDate = new Date("2026-03-27");
+
+function updateCountdownText() {
+  const now = new Date();
+  const diff = targetDate - now;
+
+  const days = Math.ceil(diff / (1000 * 60 * 60 * 24));
+
+  let text = "";
+
+  if (diff <= 0) {
+    text = "Most történik 🔥";
+  } else if (days === 0) {
+    text = "Ma este ⚡";
+  } else if (days === 1) {
+    text = "Holnap ⚡";
+  } else if (days <= 7) {
+    text = `${days} nap múlva 🔥`;
+  } else {
+    text = `${days} nap múlva`;
+  }
+
+  document.getElementById("countdownText").textContent = text;
+}
+
+setInterval(updateCountdownText, 1000);
+updateCountdownText();
