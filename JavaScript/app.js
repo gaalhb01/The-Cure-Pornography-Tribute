@@ -168,7 +168,7 @@ function updateCountdownText() {
   let text = "";
 
   if (diff <= 0) {
-    text = "Most történik 🔥";
+    text = "Ma 🔥";
   } else if (days === 0) {
     text = "Ma este ⚡";
   } else if (days === 1) {
