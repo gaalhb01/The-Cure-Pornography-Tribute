@@ -157,7 +157,7 @@ document.addEventListener('DOMContentLoaded', () => {
   window.addEventListener('resize', updateScrollBarAll);
 });
 
-const targetDate = new Date("2026-03-28");
+const targetDate = new Date("2026-04-24");
 
 function updateCountdownText() {
   const now = new Date();
