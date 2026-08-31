@@ -18,7 +18,6 @@ document.querySelectorAll('img[data-open-modal="true"]').forEach(img => {
         modalImage.src = img.src;
         modal.classList.add('open');
 
-        // Háttéroldal görgetésének tiltása
         document.body.classList.add('modal-open');
     });
 });
@@ -26,7 +25,6 @@ document.querySelectorAll('img[data-open-modal="true"]').forEach(img => {
 closeButton.addEventListener('click', () => {
     modal.classList.remove('open');
 
-    // Háttéroldal görgetésének visszaengedése
     document.body.classList.remove('modal-open');
 });
 
